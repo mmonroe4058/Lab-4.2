@@ -16,7 +16,24 @@ public class Runner
 	{		
 		File data = new File("Class_Size_Reduction_Projects.csv");
 		CSVUtilities x = new CSVUtilities(data);
-		System.out.println(x.CSVData);
+		int y = x.numColumns;
+		int z = x.numRows;
+		int a = 0;
+		int b = y * z;
+		while(a < b)
+		{
+			for(int i = 0; i < y; i++)
+			{	
+				System.out.print(x.CSVData.get(a) + " ");
+				a++;
+			}
+			System.out.println();
+			
+		}
+		
+		x.getColumnHeaders();
+		
+		//System.out.println(x.CSVData);
 		
 	}
 }

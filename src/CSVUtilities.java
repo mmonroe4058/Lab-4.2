@@ -21,7 +21,8 @@ public class CSVUtilities
 {
 	
 	ArrayList<String> CSVData = new ArrayList<String>();
-	int numColumns;
+	int numColumns = 0;
+	int numRows = 0;
 
 	public CSVUtilities(File csv)
 	{
@@ -35,9 +36,14 @@ public class CSVUtilities
 				{
 					String line = filein.readLine();
 						while (line != null)
-						{ 
+						{ 						
 							String[] attributes = line.split(",");
-							CSVData.add(attributes[0]);
+							numColumns = attributes.length;
+							for(int x = 0; x < numColumns; x++ )
+							{
+								CSVData.add(attributes[x]);
+							}
+							numRows++;
 							line = filein.readLine(); 
 						}
 				}
@@ -57,7 +63,12 @@ public class CSVUtilities
 	
 	public List<String> getColumnHeaders()
 	{
-		//return this.readLine();
+		ArrayList<String> headers = new ArrayList<String>();
+		for(int i = 0; i < numColumns; i++)
+		{	
+			headers.add(CSVData.get(i));
+		}
+		return headers;
 	}
 	
 	public List<String> getDataString(int column)
