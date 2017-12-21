@@ -31,7 +31,7 @@ public class Runner
 			
 		}
 		
-		x.getColumnHeaders();
+		System.out.println(x.getColumnHeaders());
 		
 		//System.out.println(x.CSVData);
 		
