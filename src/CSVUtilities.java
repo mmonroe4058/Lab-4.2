@@ -35,6 +35,7 @@ public class CSVUtilities
 				try
 				{
 					String line = filein.readLine();
+					
 						while (line != null)
 						{ 						
 							String[] attributes = line.split(",");
@@ -74,17 +75,40 @@ public class CSVUtilities
 	public List<String> getDataString(int column)
 	{
 		ArrayList<String> x = new ArrayList<String>();
-		x.add(this[column]);
+		int i = column+numColumns;
+		while(i < numColumns*numRows)
+		{	
+			String y = CSVData.get(i);
+			x.add(y);
+			i = i+numColumns;
+		}
+		return x;
 		
 	}
 
 	public List<Integer> getDataInt(int column)
 	{
-		
+		ArrayList<Integer> x = new ArrayList<Integer>();
+		int i = column+numColumns;
+		while(i < numColumns*numRows)
+		{	
+			int y = Integer.parseInt(CSVData.get(i));
+			x.add(y);
+			i = i+numColumns;
+		}
+		return x;
 	}
 	
 	public List<Double> getDataDouble(int column)
 	{
-		
+		ArrayList<Double> x = new ArrayList<Double>();
+		int i = column+numColumns;
+		while(i < numColumns*numRows)
+		{	
+			double y = Double.parseDouble(CSVData.get(i));
+			x.add(y);
+			i = i+numColumns;
+		}
+		return x;
 	}
 }

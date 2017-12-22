@@ -24,14 +24,21 @@ public class Runner
 		{
 			for(int i = 0; i < y; i++)
 			{	
-				System.out.print(x.CSVData.get(a) + " ");
+				System.out.print(x.CSVData.get(a) + "  ");
 				a++;
 			}
 			System.out.println();
 			
 		}
 		
+		
+		System.out.println();
+		
+		
 		System.out.println(x.getColumnHeaders());
+		System.out.println(x.getDataString(1));
+		System.out.println(x.getDataInt(5));
+		System.out.println(x.getDataDouble(5));
 		
 		//System.out.println(x.CSVData);
 		
