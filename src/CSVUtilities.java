@@ -62,6 +62,34 @@ public class CSVUtilities
 
 	}
 	
+	public writeCSV(File file)
+	{
+		PrintWriter pw = null;
+		try
+		{
+			pw = new PrintWriter(file);;
+		}
+		catch(FileNotFoundException e)
+		{
+			System.err.println(e);
+		}
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("id");
+        sb.append(',');
+        sb.append("Name");
+        sb.append('\n');
+        
+        sb.append("id");
+        sb.append(',');
+        sb.append("Name");
+        sb.append('\n');
+        
+        pw.write(sb.toString());
+        pw.close();
+        System.out.println("done!");
+	}
+	
 	public List<String> getColumnHeaders()
 	{
 		ArrayList<String> headers = new ArrayList<String>();

@@ -15,7 +15,9 @@ public class Runner
 	public static void main(String... args)
 	{		
 		File data = new File("Class_Size_Reduction_Projects.csv");
+		File a = new File("a.csv")
 		CSVUtilities x = new CSVUtilities(data);
+		CSVUtilities writeIn = new CSVUtilities(a);
 		int y = x.numColumns;
 		int z = x.numRows;
 		int a = 0;
@@ -31,6 +33,7 @@ public class Runner
 			
 		}
 		
+		writeCSV(a);
 		
 		System.out.println();
 		
