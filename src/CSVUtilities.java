@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -62,12 +63,12 @@ public class CSVUtilities
 
 	}
 	
-	public writeCSV(File file)
+	public static void writeCSV(File file)
 	{
 		PrintWriter pw = null;
 		try
 		{
-			pw = new PrintWriter(file);;
+			pw = new PrintWriter(file);
 		}
 		catch(FileNotFoundException e)
 		{
@@ -75,10 +76,11 @@ public class CSVUtilities
 		}
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("id");
+		sb.append("Name");
         sb.append(',');
-        sb.append("Name");
+        sb.append("High Score");
         sb.append('\n');
+        
         
         sb.append("id");
         sb.append(',');
