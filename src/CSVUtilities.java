@@ -2,21 +2,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.FileReader;
 import java.io.File;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CSVUtilities
 {
@@ -61,35 +50,6 @@ public class CSVUtilities
 			System.out.println("ERROR: File not found!");
 		}
 
-	}
-	
-	public static void writeCSV(File file)
-	{
-		PrintWriter pw = null;
-		try
-		{
-			pw = new PrintWriter(file);
-		}
-		catch(FileNotFoundException e)
-		{
-			System.err.println(e);
-		}
-		StringBuilder sb = new StringBuilder();
-		
-		sb.append("Name");
-        sb.append(',');
-        sb.append("High Score");
-        sb.append('\n');
-        
-        
-        sb.append("id");
-        sb.append(',');
-        sb.append("Name");
-        sb.append('\n');
-        
-        pw.write(sb.toString());
-        pw.close();
-        System.out.println("done!");
 	}
 	
 	public List<String> getColumnHeaders()
@@ -141,4 +101,34 @@ public class CSVUtilities
 		}
 		return x;
 	}
+	
+	/*
+	public static void writeCSV(File file)
+	{
+		PrintWriter pw = null;
+		try
+		{
+			pw = new PrintWriter(file);
+		}
+		catch(FileNotFoundException e)
+		{
+			System.err.println(e);
+		}
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Name");
+        sb.append(',');
+        sb.append("High Score");
+        sb.append('\n');
+        
+        
+        sb.append("id");
+        sb.append(',');
+        sb.append("Name");
+        sb.append('\n');
+        
+        pw.write(sb.toString());
+        pw.close();
+        System.out.println("done!");
+	}*/
 }
